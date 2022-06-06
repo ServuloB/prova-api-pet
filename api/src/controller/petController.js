@@ -18,8 +18,8 @@ server.post('/pet', async (req,resp)=>{
 
 server.get ('/pet', async (req, resp)=>{
     try{
-        const {resposta}= listarPets();
-        return resposta
+        const resposta= await listarPets();
+        resp.send(resposta);
     }
     catch(err){
         resp.status(400).send({
