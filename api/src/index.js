@@ -1,7 +1,8 @@
 import "dotenv/config"
 import express from "express"
-import petController from "./controller/petController.js"
 import cors from "cors"
+import petController from "./controller/petController.js"
+
 
 
 const server= express();
