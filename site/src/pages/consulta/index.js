@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { consultarPet } from "../../api/petAPI";
 
 export default function Index(){
 
-    const [pet,setPet]= [];
+    const [pet,setPet]= useState([]);
 
     async function carregarTdPet(){
         const r= await consultarPet();
@@ -15,7 +15,7 @@ export default function Index(){
     }, [])
 
     return (
-        <main>
+        <div className="consulta">
             <p> Consultar pet </p>
             <table>
                 <thead>
@@ -33,6 +33,6 @@ export default function Index(){
                     )}
                 </tbody>
             </table>
-        </main>
-    )
+        </div>
+    );
 }

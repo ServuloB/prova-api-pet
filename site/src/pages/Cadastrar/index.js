@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { cadastrarPet } from "../../api/petAPI";
 
-export default function index(){
+export default function Index() { 
 
-    const [nome, setNome]=[];
+    const [nome, setNome]= useState('');
 
     async function salvarClick(){
         try{
@@ -15,11 +15,11 @@ export default function index(){
     }
 
     return (
-        <main>
+        <div className="cadastro">
             <p>Cadastre o Pet</p>
             <p>nome</p>
             <input type={'text'} value={nome} onChange={e=> setNome(e.target.value)} ></input>
             <button onClick={salvarClick}>salvar</button>
-        </main>
-    )
+        </div>
+    );
 }
