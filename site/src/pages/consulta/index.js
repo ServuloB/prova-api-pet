@@ -6,8 +6,8 @@ export default function Index(){
     const [pet,setPet]= useState([]);
 
     async function carregarTdPet(){
-        const r= await consultarPet();
-        setPet(r);
+        const [resposta]= await consultarPet();
+        setPet(resposta);
     }
 
     useEffect(()=>{
@@ -24,13 +24,14 @@ export default function Index(){
                         <th>NOME</th>
                     </tr>
                 </thead>
-                <tbody>
+                
+                <tbody>        
                     {pet.map(item=>
-                    <tr>
+                        <tr>
                         <td>{item.id}</td>
                         <td>{item.nome}</td>
                     </tr>
-                    )}
+                    )}          
                 </tbody>
             </table>
         </div>
